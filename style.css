@@ -1,0 +1,1181 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#ffd7e8;
+}
+
+/* ===========================
+   FUNDO
+=========================== */
+
+body{
+    background:linear-gradient(
+        180deg,
+        #ffd8ea,
+        #ffc7de,
+        #ffbfd9
+    );
+    position:relative;
+}
+
+.background-hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.background-hearts::before,
+.background-hearts::after{
+    content:"❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    position:absolute;
+    font-size:22px;
+    color:rgba(255,255,255,.18);
+    animation:floatHearts 18s linear infinite;
+}
+
+.background-hearts::after{
+    left:45%;
+    animation-duration:25s;
+}
+
+@keyframes floatHearts{
+
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-120vh);
+    }
+
+}
+
+/* ===========================
+   PAGINAS
+=========================== */
+
+.page{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.6s;
+
+    z-index:2;
+
+}
+
+.page.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+/* ===========================
+   JANELA
+=========================== */
+
+.window{
+
+    width:92%;
+    max-width:390px;
+
+    height:90vh;
+
+    background:#ffe7f1;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.15),
+
+        inset 0 0 0 2px rgba(255,255,255,.4);
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+/* ===========================
+   BARRA SUPERIOR
+=========================== */
+
+.top-bar{
+
+    height:52px;
+
+    background:#f7bfd4;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 18px;
+
+}
+
+.top-bar p{
+
+    color:#7a3f58;
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+.bolinhas{
+
+    display:flex;
+    gap:8px;
+
+}
+
+.bolinhas span{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.bolinhas span:nth-child(1){
+
+    background:#ff6b81;
+
+}
+
+.bolinhas span:nth-child(2){
+
+    background:#ffd166;
+
+}
+
+.bolinhas span:nth-child(3){
+
+    background:#6ee7b7;
+
+}
+
+/* ===========================
+   CONTEUDO
+=========================== */
+
+.conteudo{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   TITULOS
+=========================== */
+
+h1{
+
+    font-family:"Patrick Hand",cursive;
+
+    font-size:40px;
+
+    color:#ff4f86;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.descricao{
+
+    font-size:17px;
+
+    color:#7f5d68;
+
+    line-height:1.6;
+
+    margin-bottom:45px;
+
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    font-family:"Poppins";
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+#btnComecar,
+#btnContinuar,
+#reiniciar{
+
+    width:220px;
+
+    height:58px;
+
+    border-radius:40px;
+
+    background:#ff5d94;
+
+    color:white;
+
+    box-shadow:
+
+    0 12px 25px rgba(255,82,134,.35);
+
+}
+
+#btnComecar:hover,
+#btnContinuar:hover,
+#reiniciar:hover{
+
+    background:#ff3f7f;
+
+}
+
+/* ===========================
+   PLAYER
+=========================== */
+
+.player{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.icone-musica{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#ffd4e4;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+}
+
+.info-musica{
+
+    flex:1;
+
+    text-align:left;
+
+    margin-left:15px;
+
+}
+
+.info-musica h3{
+
+    color:#ff4d83;
+
+    font-size:18px;
+
+}
+
+.info-musica span{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+#playPause{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#ff5c94;
+
+    color:white;
+
+}
+
+/* ===========================
+   FRASE
+=========================== */
+
+.frase{
+
+    margin-top:25px;
+
+    color:#6c5a63;
+
+    line-height:1.7;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:390px){
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    .descricao{
+
+        font-size:15px;
+
+    }
+
+    #btnComecar,
+    #btnContinuar,
+    #reiniciar{
+
+        width:200px;
+
+    }
+
+}/* ==================================================
+   CARROSSEL
+================================================== */
+
+.carousel{
+
+    width:100%;
+    margin-top:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.carousel-container{
+
+    position:relative;
+
+    width:250px;
+    height:340px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:white;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.foto{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.foto.ativa{
+
+    opacity:1;
+
+}
+
+.arrow{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff4d8b;
+
+    font-size:22px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
+
+}
+
+.arrow:hover{
+
+    transform:scale(1.08);
+
+}
+
+.arrow:active{
+
+    transform:scale(.92);
+
+}
+
+/* ==================================================
+   DOTS
+================================================== */
+
+.dots{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:18px;
+
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ffd0df;
+
+    transition:.3s;
+
+}
+
+.dot.active{
+
+    width:28px;
+
+    border-radius:20px;
+
+    background:#ff5c94;
+
+}
+
+/* ==================================================
+   PAGINA DO JOGO
+================================================== */
+
+.heart-title{
+
+    font-size:65px;
+
+    margin-bottom:18px;
+
+    animation:pulseHeart 2s infinite;
+
+}
+
+.buttons-area{
+
+    width:100%;
+
+    height:280px;
+
+    position:relative;
+
+    margin-top:35px;
+
+}
+
+#simBtn{
+
+    position:absolute;
+
+    left:30px;
+    top:90px;
+
+    width:135px;
+    height:65px;
+
+    border-radius:40px;
+
+    background:#ff5d94;
+
+    color:white;
+
+    font-size:20px;
+
+    box-shadow:0 12px 25px rgba(255,93,148,.35);
+
+    transition:
+    left .25s,
+    top .25s,
+    transform .25s,
+    background .3s;
+
+}
+
+#naoBtn{
+
+    position:absolute;
+
+    right:30px;
+    top:90px;
+
+    width:135px;
+    height:65px;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#ff5d94;
+
+    border:3px solid #ff5d94;
+
+    font-size:20px;
+
+    transition:.3s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+/* quando virar SIM */
+
+#naoBtn.novoSim{
+
+    background:#ff5d94;
+
+    color:white;
+
+    border:none;
+
+    transform:scale(1.08);
+
+    animation:brilho .8s infinite alternate;
+
+}
+
+/* ==================================================
+   CONTADOR
+================================================== */
+
+#contador{
+
+    margin-top:30px;
+
+    color:#7b6a72;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    font-weight:500;
+
+}/* ==========================================
+   PÁGINA FINAL
+========================================== */
+
+.window.final{
+
+    position:relative;
+
+}
+
+.heart-final{
+
+    font-size:75px;
+
+    animation:pulseHeart 2s infinite;
+
+    margin-bottom:15px;
+
+}
+
+.infinito{
+
+    font-size:65px;
+
+    color:#ff5d94;
+
+    margin:25px 0;
+
+    animation:floatInfinity 3s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   CHUVA DE CORAÇÕES
+========================================== */
+
+#chuvaCoracoes{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.coracao{
+
+    position:absolute;
+
+    font-size:22px;
+
+    animation:cair 6s linear forwards;
+
+    opacity:.85;
+
+}
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes pulseHeart{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes brilho{
+
+    from{
+
+        box-shadow:
+        0 0 10px #ff5d94,
+        0 0 20px #ff8ab5;
+
+    }
+
+    to{
+
+        box-shadow:
+        0 0 25px #ff5d94,
+        0 0 45px #ff8ab5;
+
+    }
+
+}
+
+@keyframes cair{
+
+    0%{
+
+        transform:
+        translateY(-40px)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes floatInfinity{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes desaparecer{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   EFEITOS
+========================================== */
+
+button{
+
+    transition:
+    transform .25s,
+    box-shadow .25s,
+    background .25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+button:active{
+
+    transform:scale(.94);
+
+}
+
+.window{
+
+    animation:aparecer .6s ease;
+
+}
+
+.page{
+
+    transition:
+    opacity .6s,
+    visibility .6s;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff84b0;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVO S24 FE
+========================================== */
+
+@media(max-width:430px){
+
+    .window{
+
+        width:95%;
+        height:95vh;
+
+    }
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    .carousel-container{
+
+        width:220px;
+        height:300px;
+
+    }
+
+    .buttons-area{
+
+        height:240px;
+
+    }
+
+    #simBtn,
+    #naoBtn{
+
+        width:120px;
+        height:60px;
+
+        font-size:18px;
+
+    }
+
+}
+
+@media(max-height:740px){
+
+    .window{
+
+        height:98vh;
+
+    }
+
+    .conteudo{
+
+        padding:18px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+}
+/* ==========================================
+   PÁGINA 5 - CORAÇÃO
+========================================== */
+
+.love-page{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+    text-align:center;
+}
+
+.love-page h2{
+    color:#ff4d88;
+    margin-bottom:15px;
+}
+
+.love-page p{
+    color:white;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+#heartButton{
+
+    width:180px;
+    height:180px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:90px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.15s;
+
+    animation:pulsar 1.2s infinite;
+
+}
+
+#heartButton:active{
+
+    transform:scale(.90);
+
+}
+
+@keyframes pulsar{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+#porcentagem{
+
+    color:white;
+
+    font-size:42px;
+
+    margin:20px 0;
+
+}
+
+.barra{
+
+    width:90%;
+    max-width:320px;
+
+    height:20px;
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+#progresso{
+
+    width:0%;
+
+    height:100%;
+
+    background:#ff4d88;
+
+    transition:.2s;
+
+}
+
+#textoBarra{
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================
+   CARTA
+========================== */
+
+#carta{
+
+    position:fixed;
+
+    bottom:-500px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    transition:1.5s;
+
+    text-align:center;
+
+}
+
+#carta.subir{
+
+    bottom:120px;
+
+}
+
+.envelope{
+
+    font-size:120px;
+
+    animation:balancar 2s infinite;
+
+}
+
+@keyframes balancar{
+
+    0%{
+
+        transform:rotate(-4deg);
+
+    }
+
+    50%{
+
+        transform:rotate(4deg);
+
+    }
+
+    100%{
+
+        transform:rotate(-4deg);
+
+    }
+
+}
+
+#abrirCarta{
+
+    margin-top:15px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+#irCoracao,
+#voltarInicio {
+    background: #ffe6f0;   /* mesma cor clarinha do fundo */
+    color: #ff4f87;
+    border: 2px solid #ffb6c1;
+}
+
+#irCoracao:hover,
+#voltarInicio:hover {
+    background: #ffd6e8;
+}
