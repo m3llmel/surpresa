@@ -1147,7 +1147,9 @@ button:active{
     }
 
 }
-
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 #abrirCarta{
 
     margin-top:15px;
